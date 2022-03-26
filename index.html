@@ -2,6 +2,7 @@
 <html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="6">
     <title>赠你一句话</title>
     <style>
         .full{
@@ -59,6 +60,13 @@
     </div>
 </body>
 <script>
+    if(!window.sessionStorage.getItem('storge')){undefined
+        alert("能来到这儿的都有一个有趣的灵魂（OvO）");
+        alert("欢迎你，陌生人");
+        alert("你可以刷新或者等待几秒，有什么东西会改变~");
+        window.sessionStorage.setItem('storge','true')
+
+    }
     fetch('https://v1.hitokoto.cn')
         .then(response => response.json())
         .then(data => {
