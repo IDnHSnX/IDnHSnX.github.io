@@ -11,16 +11,19 @@
         if (!!window.ActiveXObject || "ActiveXObject" in window) {
             alert('请抛弃万恶的IE浏览器吧！更换浏览器访问本网站呢……');
         }
-        var title;
-        window.onblur = function(){
-            title = document.title;
-            document.title = "崩溃了(╯‵□′）╯︵┴─┴";
-        }
-        window.onfocus = function () {
-            if(title) {
-                document.title= title;
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                document.title = "崩溃了(╯‵□′）╯︵┴─┴" + originTitle;
+                clearTimeout(titleTime);
+            } else {
+                document.title = "还知道回来？啊？" + originTitle;
+                titleTime = setTimeout(function () {
+                    document.title = originTitle;
+                }, 2000);
             }
-        }
+        });
     </script>
     <title>赠你一句话</title>
     <style>
@@ -75,7 +78,7 @@
 </head>
 <body style="background-repeat:no-repeat;
 background-attachment:fixed;background-size:cover;
-background-image: url(https://source.unsplash.com/random)>
+background-image: url(https://source.unsplash.com/random);">
     <div id="hitokoto" class="full">
         <div class="bracket left">『
         </div>
