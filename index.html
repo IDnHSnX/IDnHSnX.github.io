@@ -11,19 +11,6 @@
         if (!!window.ActiveXObject || "ActiveXObject" in window) {
             alert('请抛弃万恶的IE浏览器吧！更换浏览器访问本网站呢……');
         }
-        var originTitle = document.title;
-        var titleTime;
-        document.addEventListener("visibilitychange", function () {
-            if (document.hidden) {
-                document.title = "崩溃了(╯‵□′）╯︵┴─┴" + originTitle;
-                clearTimeout(titleTime);
-            } else {
-                document.title = "还知道回来？啊？" + originTitle;
-                titleTime = setTimeout(function () {
-                    document.title = originTitle;
-                }, 2000);
-            }
-        });
     </script>
     <title>赠你一句话</title>
     <style>
@@ -109,5 +96,18 @@ background-image: url(https://source.unsplash.com/random);">
             author.innerText = ("—— " + (data.from_who || '') + "「" + data.from + "」");
         })
         .catch(console.error)
+    var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                document.title = "崩溃了(╯‵□′）╯︵┴─┴" + originTitle;
+                clearTimeout(titleTime);
+            } else {
+                document.title = "还知道回来？啊？" + originTitle;
+                titleTime = setTimeout(function () {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        });
 </script>
 </html>
