@@ -140,10 +140,10 @@ background-image: url(https://source.unsplash.com/random);">
         var titleTime;
         document.addEventListener("visibilitychange", function () {
             if (document.hidden) {
-                document.title = "崩溃了(╯‵□′）╯︵┴─┴" + originTitle;
+                document.title = "崩溃了(╯‵□′）╯︵┴─┴";
                 clearTimeout(titleTime);
             } else {
-                document.title = "还知道回来？啊？" + originTitle;
+                document.title = "还知道回来？啊？";
                 titleTime = setTimeout(function () {
                     document.title = originTitle;
                 }, 2000);
