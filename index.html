@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script language="javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
     <meta charset="UTF-8">
+    <script language="javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=2.0, user-scalable=yes"/>
     <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
     <script src="https://cdn.zxki.cn/js/baozha/baozha1.js"></script>
@@ -18,21 +19,16 @@
         setTimeout('updateShow  ()',0);
     });
     function updateShow() {
-        $.ajax({
-            type: 'GET',
-            url: 'https://v1.hitokoto.cn',
-            dataType: 'json',
-            json: 'callback',
-            jsonCallback: 'hitokoto',
-            success(data) {
-                $('#hitokoto_text').html(data.hitokoto)
-                $('#hitokoto_author').html("—— " + (data.from_who || '') + "「" + data.from + "」")
-            },
-            error(jqXHR, textStatus, errorThrown) {
-                console.error(textStatus, errorThrown)
-            }
-        })
-        setTimeout('updateShow()',5000);
+        fetch('https://v1.hitokoto.cn')
+            .then(response => response.json())
+            .then(data => {
+                var hitokoto = document.getElementById('hitokoto_text');
+                hitokoto.innerText = data.hitokoto;
+                const author = document.getElementById('hitokoto_author');
+                author.innerText = "—— " + (data.from_who || '') + "「" + data.from + "」";
+            })
+            .catch(console.error)
+           setTimeout('updateShow()',5000);
     }
 </script>
     <title>赠你一句话</title>
