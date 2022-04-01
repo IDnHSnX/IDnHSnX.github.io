@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="10">
     <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=2.0, user-scalable=yes"/>
     <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
     <script src="https://cdn.zxki.cn/js/baozha/baozha1.js"></script>
@@ -127,6 +126,28 @@ background-image: url(https://source.unsplash.com/random);">
     </div>
 </body>
 <script>
+    $(document).ready(function(e){
+        setTimeout('updateShow  ()',0);
+    });
+    function updateShow() {
+        $.ajax({
+            type: 'GET',
+            url: 'https://v1.hitokoto.cn',
+            dataType: 'json',
+            json: 'callback',
+            jsonCallback: 'hitokoto',
+            success(data) {
+                $('#hitokoto_text').text(data.hitokoto)
+                $('#hitokoto_author').text("—— " + (data.from_who || '') + "「" + data.from + "」")
+            },
+            error(jqXHR, textStatus, errorThrown) {
+                console.error(textStatus, errorThrown)
+            }
+        })
+        setTimeout('updateShow()',5000);
+    }
+</script>
+<script>
     if(!window.sessionStorage.getItem('storge')){undefined
         alert("能来到这儿的都有一个有趣的灵魂（OvO）");
         alert("欢迎你，陌生人");
@@ -134,15 +155,6 @@ background-image: url(https://source.unsplash.com/random);">
         window.sessionStorage.setItem('storge','true')
 
     }
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            const hitokoto = document.getElementById('hitokoto_text');
-            hitokoto.innerText = data.hitokoto;
-            var author = document.getElementById('hitokoto_author');
-            author.innerText = ("—— " + (data.from_who || '') + "「" + data.from + "」");
-        })
-        .catch(console.error)
     var originTitle = document.title;
         var titleTime;
         document.addEventListener("visibilitychange", function () {
