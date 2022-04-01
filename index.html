@@ -16,6 +16,13 @@
     </script>
     <title>赠你一句话</title>
     <style>
+        canvas{
+            position:absolute;
+            right:0;
+            top:0;
+            height: 100%;
+            width: 100%;
+        }
         .full{
             background-color: whitesmoke;
             filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6;
@@ -68,8 +75,8 @@
 <body style="background-repeat:no-repeat;
 background-attachment:fixed;background-size:cover;
 background-image: url(https://source.unsplash.com/random);">
+  <script src="../assets/autoload.js"></script>
   <div id="page_end_html">
-    <script src="https://l2dwidget.js.org//lib/L2Dwidget.min.js"></script>
     <script type="text/javascript">
         L2Dwidget
             .on('*', (name) => {
