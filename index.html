@@ -13,6 +13,28 @@
             alert('请抛弃万恶的IE浏览器吧！更换浏览器访问本网站呢……');
         }
     </script>
+    <script>
+    $(document).ready(function(e){
+        setTimeout('updateShow  ()',0);
+    });
+    function updateShow() {
+        $.ajax({
+            type: 'GET',
+            url: 'https://v1.hitokoto.cn',
+            dataType: 'json',
+            json: 'callback',
+            jsonCallback: 'hitokoto',
+            success(data) {
+                $('#hitokoto_text').text(data.hitokoto)
+                $('#hitokoto_author').text("—— " + (data.from_who || '') + "「" + data.from + "」")
+            },
+            error(jqXHR, textStatus, errorThrown) {
+                console.error(textStatus, errorThrown)
+            }
+        })
+        setTimeout('updateShow()',5000);
+    }
+</script>
     <title>赠你一句话</title>
     <style>
         canvas{
@@ -125,28 +147,6 @@ background-image: url(https://source.unsplash.com/random);">
         </div>
     </div>
 </body>
-<script>
-    $(document).ready(function(e){
-        setTimeout('updateShow  ()',0);
-    });
-    function updateShow() {
-        $.ajax({
-            type: 'GET',
-            url: 'https://v1.hitokoto.cn',
-            dataType: 'json',
-            json: 'callback',
-            jsonCallback: 'hitokoto',
-            success(data) {
-                $('#hitokoto_text').text(data.hitokoto)
-                $('#hitokoto_author').text("—— " + (data.from_who || '') + "「" + data.from + "」")
-            },
-            error(jqXHR, textStatus, errorThrown) {
-                console.error(textStatus, errorThrown)
-            }
-        })
-        setTimeout('updateShow()',5000);
-    }
-</script>
 <script>
     if(!window.sessionStorage.getItem('storge')){undefined
         alert("能来到这儿的都有一个有趣的灵魂（OvO）");
