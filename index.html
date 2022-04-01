@@ -15,9 +15,9 @@
         }
     </script>
     <script>
-    $(document).ready(function(){
+    window.onload = function(){
         setTimeout('updateShow  ()',0);
-    });
+    };
     function updateShow() {
         fetch('https://v1.hitokoto.cn')
             .then(response => response.json())
