@@ -19,12 +19,24 @@
            setTimeout('updateShow()',5000);
     }
     </script>
+    <link rel="shortcut icon" href="https://haremu.com/wp-content/themes/Siren/images/favicon.ico"/>
+    <link rel="stylesheet" href="https://haremu.com/wp-content/themes/Siren/OwO/meme.css"/>
+    <link rel="stylesheet" href="https://haremu.com/wp-content/themes/Siren/live2d/css/live2d.css"/>
+    <link rel="stylesheet" href="https://haremu.com/wp-content/themes/Siren/inc/css/sweet-alert.css"/>
+    <link rel="stylesheet" href="https://haremu.com/wp-content/themes/Siren/inc/css/shuoshuo.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/zooming@1.5.0/build/zooming.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.min.js"></script>
+    <link rel='stylesheet' id='player-css'  href='https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css?ver=1.0.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-four-css'  href='https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css?ver=4.7.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='prism-theme-style-css'  href='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/themes/prism-okaidia.css?ver=1.15.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='prism-plugin-toolbar-css'  href='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/plugins/toolbar/prism-toolbar.css?ver=1.15.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='siren-css'  href='https://haremu.com/wp-content/themes/Siren/style.css?ver=4.3.8.190419' type='text/css' media='all' />
+    <link rel="stylesheet" href="../assets/aplayer.css">
     <script src="http://libs.baidu.com/jquerymobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
     <script src="http://libs.baidu.com/jquerytools/1.2.7/jquery.tools.min.js"></script>
     <script src="http://libs.baidu.com/jqueryui/1.8.22/jquery-ui.min.js "></script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script language="javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=2.0, user-scalable=yes"/>
     <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
     <script src="https://cdn.zxki.cn/js/baozha/baozha1.js"></script>
@@ -98,6 +110,25 @@ background-attachment:fixed;background-size:cover;
 background-image: url(https://source.unsplash.com/random);">
   <script src="../assets/autoload.js"></script>
   <div id="page_end_html">
+      <meting-js
+        server="netease"
+        type="playlist"
+        id="2002123690"
+        fixed="true"
+        autoplay=""
+        order="random"
+>
+</meting-js>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js?ver=1.0.1' id='player-js-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js?ver=1.0.1' id='meting-js-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/ClipBoard/clipboard.min.js?ver=2.0.1' id='copy-clipboard-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/components/prism-core.min.js?ver=1.15.0' id='prism-core-js-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/plugins/autoloader/prism-autoloader.min.js?ver=1.15.0' id='prism-plugin-autoloader-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/plugins/toolbar/prism-toolbar.min.js?ver=1.15.0' id='prism-plugin-toolbar-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/plugins/show-language/prism-show-language.min.js?ver=1.15.0' id='prism-plugin-show-language-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/Prism.js/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js?ver=1.15.0' id='prism-plugin-copy-to-clipboard-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/wp/wp-editormd/tags/10.2.1/assets/jQuery/jquery.min.js?ver=1.12.4' id='jQuery-CDN-js'></script>
+<script type='text/javascript' id='Front_Style-js-extra'></script>
     <script type="text/javascript">
         L2Dwidget
             .on('*', (name) => {
@@ -117,10 +148,10 @@ background-image: url(https://source.unsplash.com/random);">
                     jsonPath: "https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json",
                 },
                 "display": {
-                    "position": "left",
+                    "position": "right",
                     "width": 170,
                     "height": 300,
-                    "hOffset": 40,
+                    "hOffset": 0,
                     "vOffset": -20
                 },
                 "mobile": {
