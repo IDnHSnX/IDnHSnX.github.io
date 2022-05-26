@@ -1,4 +1,4 @@
-function clickEffect() {
+function clickEffect(qualifiedName, value) {
     let balls = [];
     let longPressed = false;
     let longPress;
