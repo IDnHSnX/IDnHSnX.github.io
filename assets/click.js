@@ -10,7 +10,7 @@ function clickEffect(qualifiedName, value) {
     const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D", "#FFFFFF", "#000000", "#ef5b9c", "#8552a1", "#50b7c1", "#6e6b41"];
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
-    canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+    canvas.setAttribute("style", value);
     const pointer = document.createElement("span");
     pointer.classList.add("pointer");
     document.body.appendChild(pointer);
