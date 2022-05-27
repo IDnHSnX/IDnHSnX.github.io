@@ -37,9 +37,11 @@
     <script src="http://libs.baidu.com/jqueryui/1.8.22/jquery-ui.min.js "></script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script language="javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=2.0, user-scalable=yes"/>
-    <canvas></canvas>
-    <script type="text/javascript" src="https://idnhsnx.github.io/assets/click.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, minimum-scale=0.7, maximum-scale=2.0, user-scalable=yes"/>
+    <canvas>
+    <script type="text/javascript" src="https://idnhsnx.github.io/assets/click.js"></script> 
+    <script type="text/javascript" src="https://idnhsnx.github.io/assets/slide.js"></script>  
+    </canvas>
     <script src="https://l2dwidget.js.org//lib/L2Dwidget.min.js"></script>
     <script type="text/javascript">
         if (!!window.ActiveXObject || "ActiveXObject" in window) {
@@ -49,8 +51,8 @@
     <title>random sentence</title>
     <style>
         canvas{
-            position:absolute;
-            right:0;
+            position:fixed;
+            left:0;
             top:0;
             height: 100%;
             width: 100%;
@@ -107,7 +109,6 @@
 <body onload="myFunction()"; style="background-repeat:no-repeat;
 background-attachment:fixed;background-size:cover;
 background-image: url(https://source.unsplash.com/random);">
-  <script type="text/javascript" src="https://idnhsnx.github.io/assets/slide.js"></script>
   <div id="page_end_html">
       <meting-js
         server="netease"
